@@ -189,7 +189,7 @@ static void hci_smd_recv_data(void)
 	bt_cb(skb)->pkt_type = HCI_ACLDATA_PKT;
 	skb_orphan(skb);
 
-	rc = hci_recv_frame(hsmd->hdev,skb);
+	rc = hci_recv_frame(hsmd->hdev, skb);
 	if (rc < 0) {
 		BT_ERR("Error in passing the packet to HCI Layer");
 		/*

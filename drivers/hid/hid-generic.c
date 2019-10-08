@@ -23,7 +23,7 @@
 #include <asm/byteorder.h>
 
 #include <linux/hid.h>
-static const struct hid_device_id hid_generic_devices[] = {
+/*static const struct hid_device_id hid_generic_devices[] = {
 	{ HID_DEVICE(HID_BUS_ANY, HID_ANY_ID, HID_ANY_ID) },
 	{ }
 };
@@ -49,8 +49,8 @@ static void __exit hid_generic_exit2(void)
 {
 	hid_unregister_driver(&hid_generic_driver);
 }
-
-/*static const struct hid_device_id hid_table[] = {
+*/
+static const struct hid_device_id hid_table[] = {
 	{ HID_DEVICE(HID_BUS_ANY, HID_GROUP_GENERIC, HID_ANY_ID, HID_ANY_ID) },
 	{ }
 };
@@ -61,9 +61,9 @@ static struct hid_driver hid_generic = {
 	.id_table = hid_table,
 };
 module_hid_driver(hid_generic);
-*/
-module_init(hid_generic_init2);
-module_exit(hid_generic_exit2);
+
+/*module_init(hid_generic_init2);
+module_exit(hid_generic_exit2);*/
 
 MODULE_AUTHOR("Henrik Rydberg");
 MODULE_DESCRIPTION("HID generic driver");
